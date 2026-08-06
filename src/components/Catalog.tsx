@@ -14,6 +14,7 @@ interface CatalogItem {
 }
 
 const PRODUCTS: CatalogItem[] = [
+  // --- ACCESORIOS DE CABELLO ($20 USD) ---
   {
     id: 'gancho-frances-automatico',
     name: 'Gancho Francés Automático de Tembleque',
@@ -50,6 +51,8 @@ const PRODUCTS: CatalogItem[] = [
     badge: 'Tradición',
     features: ['Dientes reforzados', 'Ramillete en perlas/cristales', 'Ideal para trajes típicos']
   },
+
+  // --- BISUTERÍA ARTESANAL ($15 USD) ---
   {
     id: 'pulsera-tembleque-cristal',
     name: 'Pulsera Tejida de Tembleque',
@@ -68,6 +71,8 @@ const PRODUCTS: CatalogItem[] = [
     badge: 'Tendencia',
     features: ['Ultraligeros (no pesan)', 'Anzuelo hipoalergénico', 'Movimiento con brillo natural']
   },
+
+  // --- TRADICIONAL & FOLCLOR ---
   {
     id: 'tapamonos-flores-individuales',
     name: 'Pareja de Tapamoños / Flores Individuales',
@@ -86,6 +91,8 @@ const PRODUCTS: CatalogItem[] = [
     badge: 'Colección de Gala',
     features: ['Juego tradicional completo', 'Empaque de conservación de lujo', 'Asesoría de vestuario incluida']
   },
+
+  // --- ARTE & DECORACIÓN ---
   {
     id: 'reloj-lujo-cristal-pared',
     name: 'Reloj de Pared de Lujo en Cristal & Bisutería',
@@ -113,6 +120,7 @@ export const Catalog: React.FC = () => {
     <section id="catalogo" className="py-20 bg-stone-900 border-t border-b border-stone-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Brand Slogan & Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-bold tracking-widest uppercase mb-4 shadow-sm">
             <Sparkles className="w-3.5 h-3.5" />
@@ -126,6 +134,7 @@ export const Catalog: React.FC = () => {
           </p>
         </div>
 
+        {/* Category Navigation Bar */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {[
             { id: 'todos', label: 'Ver Todos los Modelos' },
@@ -148,15 +157,18 @@ export const Catalog: React.FC = () => {
           ))}
         </div>
 
+        {/* Product Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map(product => (
             <div
               key={product.id}
               className="bg-stone-950 border border-stone-800 rounded-3xl p-6 hover:border-amber-500/50 transition-all flex flex-col justify-between group shadow-xl hover:shadow-amber-500/5 relative overflow-hidden"
             >
+              {/* Background Subtle Gradient */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/10 transition-all pointer-events-none" />
 
               <div>
+                {/* Header Badge & Price */}
                 <div className="flex justify-between items-center mb-4">
                   <span className="px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30 text-[10px] font-bold uppercase tracking-wider">
                     {product.badge || 'Artesanal'}
@@ -167,6 +179,7 @@ export const Catalog: React.FC = () => {
                   </div>
                 </div>
 
+                {/* Title & Description */}
                 <h3 className="text-xl font-bold text-stone-100 group-hover:text-amber-400 transition-colors">
                   {product.name}
                 </h3>
@@ -174,6 +187,7 @@ export const Catalog: React.FC = () => {
                   {product.description}
                 </p>
 
+                {/* Features List */}
                 <div className="mt-4 space-y-1.5">
                   {product.features.map((feat, idx) => (
                     <div key={idx} className="flex items-center gap-2 text-[11px] text-stone-300">
@@ -184,6 +198,7 @@ export const Catalog: React.FC = () => {
                 </div>
               </div>
 
+              {/* Card Footer & Action */}
               <div className="mt-6 pt-4 border-t border-stone-900 space-y-3">
                 <div className="flex items-center justify-between text-[11px] text-stone-500">
                   <span className="flex items-center gap-1">
@@ -208,6 +223,7 @@ export const Catalog: React.FC = () => {
           ))}
         </div>
 
+        {/* Brand Slogan Footer Box */}
         <div className="mt-16 p-8 rounded-3xl bg-stone-950 border border-amber-900/30 text-center relative overflow-hidden">
           <h3 className="text-xl font-bold text-amber-300 font-serif">
             ¿Buscas un diseño único o un modelo para eventos folclóricos?
