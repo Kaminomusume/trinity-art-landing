@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { Catalog } from "@/components/Catalog";
 import { InteractiveQuoteForm } from "@/components/InteractiveQuoteForm";
 import { Footer } from "@/components/Footer";
 
@@ -8,6 +9,7 @@ export default function Home() {
     <main className="min-h-screen bg-stone-950 text-stone-100">
       <Navbar />
       <Hero />
+      <Catalog />
       <InteractiveQuoteForm />
       <Footer />
     </main>
